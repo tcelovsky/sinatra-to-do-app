@@ -6,6 +6,8 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "secret"
   end
 
-  
+  get '/login' do
+    "hello"
+  end
 
 end
