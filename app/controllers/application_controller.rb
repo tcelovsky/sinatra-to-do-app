@@ -7,7 +7,23 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-    "hello"
+    erb :home
+  end
+
+  get '/login' do
+    erb 'users/login'
+  end
+
+  post '/login' do
+    erb :index
+  end
+
+  get '/signup' do
+    erb 'users/signup'
+  end
+
+  post '/signup' do
+    erb :index
   end
 
   helpers do
