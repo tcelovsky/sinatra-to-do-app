@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   post '/login' do
     login
-    erb :index
+    erb :"tasks/index"
   end
 
   get '/signup' do
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       @user = User.create(name: params[:name], email: params[:email], password: params[:password])
       session[:id] = @user.id
       login
-    erb :index
+    erb :"tasks/index"
   end
 
   get '/logout' do

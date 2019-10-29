@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   get '/tasks' do
-    erb :index
+    erb :"tasks/index"
   end
 
 end
