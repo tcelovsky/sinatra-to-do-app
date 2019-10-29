@@ -14,8 +14,8 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
-    if params[:email].present? && params[:password].present?
-      @user = User.create(email: params[:email], password: params[:password])
+    if params[:name].present? && params[:email].present? && params[:password].present?
+      @user = User.create(name: params[:name], email: params[:email], password: params[:password])
       session[:id] = @user.id
       login
     erb :index
