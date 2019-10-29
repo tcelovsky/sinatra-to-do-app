@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   end
 
   post '/login' do
+    login
     erb :index
   end
 
@@ -14,6 +15,10 @@ class UsersController < ApplicationController
 
   post '/signup' do
     erb :index
+  end
+
+  get '/logout' do
+    logout
   end
 
 end
