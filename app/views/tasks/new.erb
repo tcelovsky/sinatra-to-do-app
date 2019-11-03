@@ -1,1 +1,18 @@
+<h2>Create Task:</h2>
+<div class = "container">
+  <form action="/tasks/new" method="POST">
+  <label>Title: </label><input type="text" name="title"><br>
+  <br>
+  <label>Due Date: </label><input type="text" name="due_date"><br>
+  <br>
+  <label>Content: </label><textarea name="content" rows="4" cols="50"></textarea><br>
+  <br>
+  <input type="submit" value="Submit">
+  </form>
+</div>
 
+<form align="right" name="logout_form" method="post" action="logout">
+<label class="logout">
+<input name="logout" type="submit" id="submit2" value="Log Out">
+</label>
+</form>
