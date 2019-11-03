@@ -1,7 +1,8 @@
-<h1>Signup</h1>
+<h2>Signup</h2>
 
-<% "Must include name, email and password" if @user && @user.errors.any? >
-<form action="/users" method="POST">
+<% "Must include name, email and password" if @user && @user.errors.any? %>
+
+<form action="/signup" method="POST">
   <p>
     <label for="name">Name:</label>
     <input type="text" name="name" id="name">
@@ -14,5 +15,5 @@
     <label for="password">Password:</label>
     <input type="password" name="password" id="password">
   </p>
-  <input type="submit" />
+  <input type="submit"/>
 </form>

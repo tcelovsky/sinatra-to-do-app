@@ -1,0 +1,16 @@
+<h2>To Do:
+  <div class = "container">
+      <p><% Task.all.each do |e| %>
+        <%= e.title  %><br>
+        <%= e.due_date %><br>
+        <%= e.content %><br>
+        <% end %>
+      </p>
+  </div>
+</h2>
+
+<form align="right" name="logout_form" method="post" action="logout">
+  <label class="button">
+  <input name="logout" type="submit" id="submit2" value="Log Out">
+  </label>
+</form>
