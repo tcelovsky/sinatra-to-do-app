@@ -12,16 +12,16 @@ class ApplicationController < Sinatra::Base
 
   helpers do
 
-    def login(email, password)
-      #check if user with this email actually exits
-      user = User.find_by(email: params[:email])
-      if user && user.authenticate(password)
-        #if so, set the session
-        session[:email] = user.email
-      #otherwise, redirect
-      else redirect to '/login'
-      end
-    end
+    # def login(email, password)
+    #   #check if user with this email actually exits
+    #   @user = User.find_by(email: params[:email], password: params[:password])
+    #   if @user && @user.authenticate(password)
+    #     #if so, set the session
+    #     session[:email] = user.email
+    #   #otherwise, redirect
+    #   else redirect to :'/login'
+    #   end
+    # end
 
     def current_user
       # find the current user by email in the session hash
