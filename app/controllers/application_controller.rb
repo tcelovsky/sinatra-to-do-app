@@ -10,6 +10,10 @@ class ApplicationController < Sinatra::Base
     erb :home
   end
 
+  get '/logout' do
+    logout
+  end
+
   helpers do
 
     def login(email, password)
@@ -36,6 +40,7 @@ class ApplicationController < Sinatra::Base
     def logout
       # clear session to log out the user
       session.clear
+      redirect to '/'
     end
   end
 

@@ -22,8 +22,6 @@ class UsersController < ApplicationController
     erb :'/tasks/index'
   end
 
-
-
   get '/logout' do
     logout
   end
