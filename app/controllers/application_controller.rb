@@ -29,6 +29,7 @@ class ApplicationController < Sinatra::Base
     end
 
     def logged_in?
+      # check that the user is logged in by making sure that the session hash exists
       !!current_user
     end
 
