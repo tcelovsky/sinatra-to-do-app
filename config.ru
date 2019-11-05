@@ -4,5 +4,5 @@ require './config/environment'
 
 use Rack::MethodOverride
 run ApplicationController
-run TasksController
-run UsersController
+use TasksController
+use UsersController
