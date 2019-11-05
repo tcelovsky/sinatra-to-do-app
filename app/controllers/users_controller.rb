@@ -5,16 +5,10 @@ class UsersController < ApplicationController
 
   post '/signup' do
     if params[:name].present? && params[:email].present? && params[:password].present?
-      @user = User.create(name: params[:name], email: params[:email], password: params[:password])
+      @user = User.create(name: params[:name], email: params[:email], password_digest: params[:password])
       session[:id] = @user.id
-      # login(email: params[:email], password: params[:password])
-      @user = User.find_by(email: params[:email], password: params[:password])
-      if @user && @user.authenticate(password)
-        #if so, set the session
-        session[:email] = @user.email
-      #otherwise, redirect
-      else redirect to :'/login'
-      end
+      login(params[:email], params[:password])
+    else redirect to :'/login'
     end
     erb :'/tasks/index'
   end
@@ -24,14 +18,7 @@ class UsersController < ApplicationController
   end
 
   post '/login' do
-    # login(email: params[:email], password: params[:password])
-    @user = User.find_by(email: params[:email], password: params[:password])
-    if @user && @user.authenticate(password)
-      #if so, set the session
-      session[:email] = @user.email
-    #otherwise, redirect
-    else redirect to :'/login'
-    end
+    login(params[:email], params[:password])
     erb :'/tasks/index'
   end
 
