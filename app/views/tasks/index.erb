@@ -9,14 +9,15 @@
   </div>
 </h2>
 
-<form align="left" name="new_task" method="post" action="tasks/new">
-<label class="logout">
-<input name="new_task" type="new_task" value="Create New Task">
+<form align="left" name="new_task_form" method="get" action="/tasks/new">
+<label class="button">
+<input name="new_task" type="submit" id="new_task" value="Create New Task">
 </label>
 </form>
 
+
 <form align="left" name="logout_form" method="get" action="logout">
   <label class="button">
-  <input name="logout" type="submit" id="submit2" value="Log Out">
+  <input name="logout" type="submit" id="submit" value="Log Out">
   </label>
 </form>
