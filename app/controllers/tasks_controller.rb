@@ -50,7 +50,8 @@ class TasksController < ApplicationController
   end
 
   patch '/tasks/:id/edit' do
-    if params[:title].present? && params[:due_date].present? && params[:content].present?
+    if params[:title].present? && params[:due_date].present?
+      @task = Task.find_by_id(params[:id])
       @task.title = params[:title]
       @task.due_date = params[:due_date]
       @task.content = params[:content]
