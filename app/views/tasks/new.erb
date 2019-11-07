@@ -7,12 +7,18 @@
   <br>
   <label>Content: </label><textarea name="content" rows="4" cols="50"></textarea><br>
   <br>
-  <input type="submit" value="Submit">
+  <input type="submit" value="Create Task">
   </form>
 </div>
 
+<form align="left" name="task_index" method="get" action="/tasks">
+<label class="button">
+<input name="task_index" type="submit" id="task_index" value="All Tasks">
+</label>
+</form>
+
 <form align="left" name="logout_form" method="get" action="logout">
 <label class="logout">
-<input name="logout" type="submit" id="submit2" value="Log Out">
+<input name="logout" type="submit" id="submit" value="Log Out">
 </label>
 </form>
