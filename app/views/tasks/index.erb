@@ -1,13 +1,11 @@
-<h2>To Do:
+<h2>Tasks:</h2>
   <div class = "container">
-      <p><% Task.all.each do |e| %>
-        <%= e.title  %><br>
-        <%= e.due_date %><br>
-        <%= e.content %><br>
-        <% end %>
-      </p>
+      <% Task.all.each do |e| %>
+      <h3><%= e.title  %></h3>
+      <h4>Due Date: </h4><p><%= e.due_date %><br>
+      <h4>Notes: </h4><p><%= e.content %></p>
+      <% end %>
   </div>
-</h2>
 
 <form align="left" name="new_task_form" method="get" action="/tasks/new">
 <label class="button">
