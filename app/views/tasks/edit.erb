@@ -1,26 +1,26 @@
 <h2>Edit Task: <%= @task.title %></h2>
 <div class = "container">
   <form action="/tasks/<%= @task.id %>/edit" method="post">
-    <input id="hidden" type="hidden" name="_method" value="patch">
-  <label>Update Title: </label><input type="text" name="title"><br>
-  <br>
-  <label>Update Due Date: </label><input type="text" name="due_date"><br>
-  <br>
-  <label>Content: </label><textarea name="content" rows="4" cols="50"></textarea><br>
-  <br>
-  <input type="submit" value="Edit Task">
+      <input id="hidden" type="hidden" name="_method" value="patch">
+    <label>Update Title: </label><input type="text" name="title"><br>
+    <br>
+    <label>Update Due Date: </label><input type="text" name="due_date"><br>
+    <br>
+    <label>Content: </label><textarea name="content" rows="4" cols="50"></textarea><br>
+    <br>
+    <input type="submit" value="Edit Task">
   </form>
   <br>
 </div>
 
 <form align="left" name="task_index" method="get" action="/tasks">
-<label class="button">
-<input name="task_index" type="submit" id="task_index" value="All Tasks">
-</label>
+  <label class="button">
+    <input name="task_index" type="submit" id="task_index" value="All Tasks">
+  </label>
 </form>
 <br>
 <form align="left" name="logout_form" method="get" action="logout">
-<label class="logout">
-<input name="logout" type="submit" id="submit" value="Log Out">
-</label>
+  <label class="logout">
+    <input name="logout" type="submit" id="submit" value="Log Out">
+  </label>
 </form>
