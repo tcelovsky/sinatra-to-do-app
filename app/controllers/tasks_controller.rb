@@ -5,6 +5,13 @@ class TasksController < ApplicationController
     else redirect to :'/login'
     end
   end
+  
+  get '/tasks/index' do
+    if logged_in?
+      erb :'/tasks/index'
+    else redirect to :'/login'
+    end
+  end
 
   get '/tasks/new' do
     if logged_in?

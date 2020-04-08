@@ -1,31 +1,18 @@
-<form align="top" name="new_task_form" method="get" action="/tasks/new">
-  <label class="button">
-    <input name="new_task" type="submit" id="new_task" value="Create New Task">
-  </label>
-</form>
-
 <h2>Tasks:</h2>
   <div class = "container">
       <% Task.all.each_with_index do |e, i| %>
       <h3><%= i.next %>: <%= e.title  %></h3>
       <h4>Due Date: </h4><p><%= e.due_date %></p>
       <h4>Notes: </h4><p><%= e.content %></p>
-      <form align="left" name="edit_task_form" method="get" action="/tasks/<%= e.id %>/edit">
+      <form align="left" name="edit_task_form" method="get" action="/tasks/<%= @task.id %>/edit">
         <label class="button">
           <input name="edit_task" type="submit" id="edit_task" value="Edit This Task">
       </label>
       </form>
-      <form method="POST" action="/tasks/<%= e.id %>/delete">
+      <form method="POST" action="/tasks/<%= @task.id %>/delete">
         <input id="hidden" type="hidden" name="_method" value="delete">
         <input type="submit" value="Delete This Task">
       </form>
       <br>
       <% end %>
   </div>
-
-<form align="left" name="logout_form" method="get" action="/logout">
-  <label class="button">
-    <input name="logout" type="submit" id="submit" value="Log Out">
-  </label>
-</form>
-
