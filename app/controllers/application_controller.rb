@@ -19,7 +19,7 @@ class ApplicationController < Sinatra::Base
     def login(email, password)
       #check if user with this email actually exits
       @user = User.find_by(email: params[:email])
-      if @user && @user.authenticate(password)
+      if @user && @user.authenticate(params[:password])
         #if so, set the session
         session[:email] = @user.email
       #otherwise, redirect
