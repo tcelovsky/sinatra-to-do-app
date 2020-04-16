@@ -4,12 +4,12 @@
   </label>
 </form>
 
-<h2>Tasks:</h2>
-  <div class = "container">
+<h3>Tasks:</h3>
+  <div class = "tasks">
       <% Task.all.each_with_index do |e, i| %>
-      <h3><%= i.next %>: <%= e.title  %></h3>
-      <h4>Due Date: </h4><p><%= e.due_date %></p>
-      <h4>Notes: </h4><p><%= e.content %></p>
+      <h4><%= i.next %>: <%= e.title  %></h4>
+      <p>Due Date: <%= e.due_date %></p>
+      <p>Notes: <%= e.content %></p>
       <form align="left" name="edit_task_form" method="get" action="/tasks/<%= e.id %>/edit">
         <label class="button">
           <input name="edit_task" type="submit" id="edit_task" value="Edit This Task">

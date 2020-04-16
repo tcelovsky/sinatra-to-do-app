@@ -1,6 +1,6 @@
-<h2>Signup</h2>
+<h3>Please enter your name, email and password:</h3>
 
-<% "Must include name, email and password" if @user && @user.errors.any? %>
+<% "Please include name, email and password" if @user && @user.errors.any? %>
 
 <form action="/signup" method="POST">
   <p>
