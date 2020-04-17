@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   post '/signup' do
     if params[:name].present? && params[:email].present? && params[:password].present?
-      @user = User.create(name: params[:name], email: params[:email], password_digest: params[:password])
+      @user = User.create(name: params[:name], email: params[:email], password: params[:password])
       session[:id] = @user.id
       login(params[:email], params[:password])
     else redirect to :'/signup'
